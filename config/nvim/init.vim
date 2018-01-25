@@ -13,6 +13,8 @@
     autocmd VimEnter * PlugInstall
   endif
 
+  let mapleader = ","
+
   " Load and configure plugins
   source $HOME/.config/nvim/plugins.vim
   source $HOME/.config/nvim/plugins-config.vim
@@ -22,10 +24,9 @@
 " }}}
 
 " MAPPINGS: General {{{
-  let mapleader="," " Change <leader> to ,
 
-  nmap ,vv :vsplit<CR>   " Vertical split
-  nmap ,ss :split<CR>    " Vertical split
+  nmap <leader>vv :vsplit<CR>   " Vertical split
+  nmap <leader>ss :split<CR>    " Vertical split
 
   nmap <C-h> <C-w>h      " Navigate panes - left
   nmap <C-L> <C-w>l      " Navigate panes - right
