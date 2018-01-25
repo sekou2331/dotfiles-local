@@ -4,7 +4,6 @@
 call plug#begin()
 
 Plug 'tpope/vim-sensible'               " Some sensible settings
-Plug 'tpope/vim-sleuth'                 " Autodetect file spacing
 Plug 'tpope/vim-unimpaired'             "
 Plug 'tpope/vim-repeat'                 "
 Plug 'scrooloose/nerdcommenter'         " Awesome Commenting
@@ -36,6 +35,8 @@ Plug 'godlygeek/tabular'                " Tabularity
 " May not be necessary because syntastic does a great job
 " Plug 'pangloss/vim-javascript'          " JS functionality including folding
 " Plug ~/dev/vim-javascript
+"
+Plug 'tomlion/vim-solidity'
 
 Plug 'vim-syntastic/syntastic'
 Plug 'heavenshell/vim-jsdoc'
@@ -54,5 +55,8 @@ Plug 'aklt/plantuml-syntax'
 
 " Code navigation
   Plug 'majutsushi/tagbar'
+
+  " needs npm i tern (locally)
+  Plug 'ternjs/tern_for_vim'
 
 call plug#end()
