@@ -16,3 +16,5 @@ echo 'revist java setting ~/.zsh.after/java.zsh'
 # echo "setjdk 1.7"
 # setjdk 1.8
 # java -version
+
+#vi: ft=zsh

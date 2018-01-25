@@ -2,3 +2,5 @@
 function chpwd {
   ls
 }
+
+#vi: ft=zsh
