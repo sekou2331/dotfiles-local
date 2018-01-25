@@ -106,6 +106,16 @@ endfunction
 
 " PLUGIN: Tagbar {{{
   nnoremap <silent> <leader>b :TagbarToggle<cr>
+  let g:tagbar_type_solidity = {
+    \ 'ctagstype': 'solidity',
+    \ 'kinds' : [
+        \ 'c:contracts',
+        \ 'e:events',
+        \ 'f:functions',
+        \ 'm:mappings',
+        \ 'v:varialbes',
+    \ ]
+  \ }
 " }}}
 
 " PLUGIN: NERDTree {{{
