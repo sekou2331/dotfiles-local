@@ -29,6 +29,47 @@
   let g:EditorConfig_core_mode = 'external_command'
   let g:indentLine_char = '┆' " Indent guides
 " }}}
+"
+" FUNCTION: NeomakeLightlineStatus {{{
+  function! NeomakeLightlineStatus()
+      if !exists('*neomake#statusline#LoclistCounts')
+          return ''
+      endif
+
+      " Count all the errors, warnings
+      let total = 0
+
+      for v in values(neomake#statusline#LoclistCounts())
+          let total += v
+      endfor
+
+      for v in items(neomake#statusline#QflistCounts())
+          let total += v
+      endfor
+
+      if total == 0
+          return ''
+      endif
+
+      return 'line '.getloclist(0)[0].lnum. ', 1 of '.total
+  endfunction
+" }}}
+
+" FUNCTION: LocationNext {{{
+function! LocationNext()
+  try
+    lnext
+  catch
+    try | lfirst | catch | endtry
+  endtry
+endfunction
+" }}}
+
+" FUNCTION: MyFiletype {{{
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+" }}}
 
 " PLUGIN: heavenshell/vim-jsdoc {{{
   let g:jsdoc_enable_es6 = 1            " Allow ES6
@@ -51,10 +92,9 @@
   let vim_markdown_preview_temp_file=1
   let vim_markdown_preview_pandoc=1
 " }}}
-"
+
 " PLUGIN: neomake {{{
-  nnoremap <leader>e :call LocationNext()<cr> " Use <leader>e to go to the next error
-  " Use <leader>e to go to the next error
+  nnoremap <leader>e :call LocationNext()<cr>
 " }}}
 
 " PLUGIN: deoplete {{{
@@ -62,6 +102,10 @@
 
   " Improve ultisnips and deoplete integration
   call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+" }}}
+
+" PLUGIN: Tagbar {{{
+  nnoremap <silent> <leader>b :TagbarToggle<cr>
 " }}}
 
 " PLUGIN: NERDTree {{{
@@ -108,47 +152,6 @@
 
 " PLUGIN scrooloose/nerdcommenter {{{
   let g:NERDCustomDelimiters = { 'c': { 'left': '/*','right': '*/' } }
-" }}}
-
-" FUNCTION: NeomakeLightlineStatus {{{
-  function! NeomakeLightlineStatus()
-      if !exists('*neomake#statusline#LoclistCounts')
-          return ''
-      endif
-
-      " Count all the errors, warnings
-      let total = 0
-
-      for v in values(neomake#statusline#LoclistCounts())
-          let total += v
-      endfor
-
-      for v in items(neomake#statusline#QflistCounts())
-          let total += v
-      endfor
-
-      if total == 0
-          return ''
-      endif
-
-      return 'line '.getloclist(0)[0].lnum. ', 1 of '.total
-  endfunction
-" }}}
-
-" FUNCTION: LocationNext {{{
-function! LocationNext()
-  try
-    lnext
-  catch
-    try | lfirst | catch | endtry
-  endtry
-endfunction
-" }}}
-
-" FUNCTION: MyFiletype {{{
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
 " }}}
 
 " PLUGIN: ale {{{

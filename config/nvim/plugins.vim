@@ -52,4 +52,7 @@ Plug 'aklt/plantuml-syntax'
 " Code accounting hours: https://wakatime.com/vim
   Plug 'wakatime/vim-wakatime'
 
+" Code navigation
+  Plug 'majutsushi/tagbar'
+
 call plug#end()
