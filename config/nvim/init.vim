@@ -35,21 +35,13 @@
 " }}}
 
 " MAPPINGS: PlantUML {{{
-nnoremap <F5> :w!<CR> :silent make<CR>
-inoremap <F5> <Esc>:w!<CR>:silent make<CR>
-vnoremap <F5> :<C-U>:w!<CR>:silent make<CR
+  nnoremap <F5> :w!<CR> :silent make<CR>
+  inoremap <F5> <Esc>:w!<CR>:silent make<CR>
+  vnoremap <F5> :<C-U>:w!<CR>:silent make<CR
 " }}}
 
-" SETTINGS: Filetype specific settings {{{
-  autocmd FileType *          setlocal tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab
-  autocmd FileType javascript,javascript.jsx setlocal tabstop=4 shiftwidth=4 softtabstop=0 expandtab
-  autocmd FileType solidity   setlocal tabstop=4 shiftwidth=4 softtabstop=0 expandtab
-  autocmd Filetype *commit*,markdown setlocal spell         " Spell Check
-  autocmd Filetype *commit*,markdown setlocal textwidth=72  " Looks good
-  autocmd Filetype make setlocal noexpandtab                " In Makefiles DO NOT use spaces instead of tabs
-  autocmd Filetype html setlocal expandtab
-  autocmd Filetype ruby setlocal expandtab
-  autocmd Filetype json setlocal expandtab
+" SETTINGS: Default Filetype specific settings {{{
+  autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=0 expandtab
 " }}}
 
 " fUNCTIONS: {{{
@@ -89,3 +81,6 @@ echom "migrate syntastic checks to ale"
 echom "vale has to be configured. see: https://valelint.github.io/docs/config/"
 
 " vim: foldmethod=marker:sw=2
+"
+
+let tern_map_keys=1
