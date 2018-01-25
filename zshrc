@@ -104,4 +104,4 @@ alias vi="nvim"
 alias oldvim="vim"
 export EDITOR="nvim"
 
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
