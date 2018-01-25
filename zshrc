@@ -3,7 +3,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/marcus/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -93,9 +93,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# set yarn path
-export PATH=$PATH:/Users/cds/.config/yarn/global/node_modules/.bin
 
+# TODO: move this to brewfile, and separate settings
 # set mactex path
 export PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
 
@@ -104,4 +103,5 @@ alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
 export EDITOR="nvim"
- alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias ohmyzsh="mate ~/.oh-my-zsh"
