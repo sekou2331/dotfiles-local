@@ -1,0 +1,3 @@
+. ~/.profile
+
+# vi: ft=zsh

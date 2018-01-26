@@ -8,3 +8,5 @@ function url-encode; {
 function google; {
     open -a /Applications/Google\ Chrome.app "http://www.google.com/search?q=`url-encode "${(j: :)@}"`"
 }
+
+#vi: ft=zsh

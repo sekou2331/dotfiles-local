@@ -1,4 +1,0 @@
-# Load profile
-echo "load-profile"
-. ~/.profile
-
